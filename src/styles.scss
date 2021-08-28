@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap-reboot.css";
+@import "~bootstrap/dist/css/bootstrap-grid.css";
+@import "~bootstrap/scss/bootstrap";
+
+app-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-danger {
+  font-size: 10px;
+  color: red;
+}
+
+.primary-btn {
+  height: 40px;
+  padding: 0 20px;
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.secondary-btn {
+  height: 40px;
+  padding: 0 20px;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+}
+
+.max-width-container {
+  max-width: 1240px;
+  margin: auto;
+}
