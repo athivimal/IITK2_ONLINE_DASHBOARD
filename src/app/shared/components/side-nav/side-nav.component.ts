@@ -17,6 +17,14 @@ export class SideNavComponent implements OnInit {
     {
       "type" : "Engine RPM",
       "identifier" : "kt-datarpm"
+    },
+    {
+      "type" : "Angular Gauge",
+      "identifier" : "new-item"
+    },
+    {
+      "type" : "Battery Gauge",
+      "identifier" : "batt"
     }
   ]
   
