@@ -1,83 +1,107 @@
-    <ng-container *ngIf="identifier === 'kt-data'">
-        <ng-container *ngTemplateOutlet="AnimatedGauge"></ng-container>
-    </ng-container>
-    
-    <ng-container *ngIf="identifier === 'kt-datarpm'">
-        <ng-container *ngTemplateOutlet="PictorialChart"></ng-container>
-    </ng-container>
-    
-    <ng-template #AnimatedGauge>
-        <div class="row">
-        <div class="col-12 col-md-6 col-lg-4" *ngFor="let tx of mqPackets; let i = index"> 
-            <app-animated-gauge [value]="tx.value" [name]="tx.node"></app-animated-gauge>
-        </div>
-        </div>
-    </ng-template>
-    
-    <ng-template #PictorialChart>
-        <div class="row">
-        <div class="col-12 col-md-6 col-lg-4" *ngFor="let tx of mqPackets; let i = index">
-            <app-pictorial-chart
-            [value]="tx.value"
-            [name]="tx.node"
-            ></app-pictorial-chart>
-        </div>
-        </div>
-    </ng-template>
-    
+<ng-container *ngIf="identifier === 'kt-data'">
+  <ng-container *ngTemplateOutlet="AnimatedGauge"></ng-container>
+</ng-container>
 
-    <!-- <div [ngSwitch]="selectedChart">
-    <app-animated-gauge *ngSwitchCase="'Animated Gauge'"[value]="50" [name]="'chart'"></app-animated-gauge>
-    <app-pictorial-slice-shape *ngSwitchCase="'Pictorial Slice Shape'" [value]="50" [name]="'chart'"></app-pictorial-slice-shape>
-    <app-pictorial-chart *ngSwitchCase="'Pictorial Chart'"[value]="50" [name]="'chart'"></app-pictorial-chart>
-    <app-animated-gauge-blue *ngSwitchCase="'Animated Gauge Blue'"[value]="50" [name]="'chart'"></app-animated-gauge-blue>
+<ng-container *ngIf="identifier === 'kt-datarpm'">
+  <ng-container *ngTemplateOutlet="PictorialChart"></ng-container>
+</ng-container>
+
+<ng-container *ngIf="identifier === 'new-item'">
+<ng-container *ngTemplateOutlet="AngularGauge"></ng-container>
+</ng-container>
+
+<ng-container *ngIf="identifier === 'batt'">
+  <ng-container *ngTemplateOutlet="BatteryGauge"></ng-container>
+  </ng-container>
+
+<ng-template #AnimatedGauge>
+  <div class="row">
+  <div class="col-12 col-md-6 col-lg-4" *ngFor="let tx of mqPackets; let i = index"> 
+      <app-animated-gauge [value]="tx.value" [name]="tx.node"></app-animated-gauge>
+  </div>
+  </div>
+</ng-template>
+
+<ng-template #AngularGauge>
+<div class="row">
+<div class="col-12 col-md-6 col-lg-4" *ngFor="let tx of mqPackets; let i = index"> 
+    <app-angular-gauge [value]="tx.value" [name]="tx.node"></app-angular-gauge>
+</div>
+</div>
+</ng-template>
+
+<ng-template #BatteryGauge>
+  <div class="row">
+  <div class="col-12 col-md-6 col-lg-4" *ngFor="let tx of mqPackets; let i = index"> 
+      <app-battery-gauge [value]="tx.value" [name]="tx.node"></app-battery-gauge>
+  </div>
+  </div>
+  </ng-template>
+
+<ng-template #PictorialChart>
+  <div class="row">
+  <div class="col-12 col-md-6 col-lg-4" *ngFor="let tx of mqPackets; let i = index">
+      <app-pictorial-chart
+      [value]="tx.value"
+      [name]="tx.node"
+      ></app-pictorial-chart>
+  </div>
+  </div>
+</ng-template>
+
+
+<!-- <div [ngSwitch]="selectedChart">
+<app-animated-gauge *ngSwitchCase="'Animated Gauge'"[value]="50" [name]="'chart'"></app-animated-gauge>
+<app-pictorial-slice-shape *ngSwitchCase="'Pictorial Slice Shape'" [value]="50" [name]="'chart'"></app-pictorial-slice-shape>
+<app-pictorial-chart *ngSwitchCase="'Pictorial Chart'"[value]="50" [name]="'chart'"></app-pictorial-chart>
+<app-animated-gauge-blue *ngSwitchCase="'Animated Gauge Blue'"[value]="50" [name]="'chart'"></app-animated-gauge-blue>
 </div> -->
 
-  
-  <div class="d-block d-md-none ">
-    <div class="drop-down" [ngClass]="{ 'drop-down--active': menuToggle }">
-      <div id="dropDown" class="drop-down__button" (click)="dropdownToggle('')">
-        <span class="drop-down__name text-truncate">{{ selectedChart }}</span>
-        <i
-          class="fas fa-angle-down drop-down__icon"
-          [ngClass]="{ 'drop-down__icon-rotate': menuToggle }"
-        ></i>
-      </div>
-      <div class="drop-down__menu-box">
-        <ul class="drop-down__menu">
-          <li
-            data-name="profile"
-            class="drop-down__item"
-            *ngFor="let chart of espmeterCharts"
-            (click)="dropdownToggle(chart)"
-          >
-            {{ chart }}
-          </li>
-        </ul>
-      </div>
-    </div>
-    <ng-container *ngIf="selectedChart === 'Animated Gauge'">
-      <ng-container *ngTemplateOutlet="AnimatedGauge"></ng-container>
-    </ng-container>
-    <ng-container *ngIf="selectedChart === 'Pictorial Slice Shape'">
-      <ng-container *ngTemplateOutlet="PictorialSliceShape"></ng-container>
-    </ng-container>
-    <ng-container *ngIf="selectedChart === 'Pictorial Chart'">
-      <ng-container *ngTemplateOutlet="PictorialChart"></ng-container>
-    </ng-container>
-    <ng-container *ngIf="selectedChart === 'Animated Gauge Blue'">
-      <ng-container *ngTemplateOutlet="AnimatedGaugeBlue"></ng-container>
-    </ng-container>
-    <ng-template #AnimatedGauge>
-      <app-animated-gauge [value]="50" [name]="'chart'"></app-animated-gauge>
-    </ng-template>
-    <ng-template #PictorialChart>
-      <app-pictorial-chart [value]="50" [name]="'chart'"></app-pictorial-chart>
-    </ng-template>
-    <ng-template #AnimatedGaugeBlue>
-      <app-animated-gauge-blue
-        [value]="50"
-        [name]="'chart'"
-      ></app-animated-gauge-blue>
-    </ng-template>
-  </div>
+
+<div class="d-block d-md-none ">
+<div class="drop-down" [ngClass]="{ 'drop-down--active': menuToggle }">
+<div id="dropDown" class="drop-down__button" (click)="dropdownToggle('')">
+  <span class="drop-down__name text-truncate">{{ selectedChart }}</span>
+  <i
+    class="fas fa-angle-down drop-down__icon"
+    [ngClass]="{ 'drop-down__icon-rotate': menuToggle }"
+  ></i>
+</div>
+<div class="drop-down__menu-box">
+  <ul class="drop-down__menu">
+    <li
+      data-name="profile"
+      class="drop-down__item"
+      *ngFor="let chart of espmeterCharts"
+      (click)="dropdownToggle(chart)"
+    >
+      {{ chart }}
+    </li>
+  </ul>
+</div>
+</div>
+<ng-container *ngIf="selectedChart === 'Animated Gauge'">
+<ng-container *ngTemplateOutlet="AnimatedGauge"></ng-container>
+</ng-container>
+<ng-container *ngIf="selectedChart === 'Pictorial Slice Shape'">
+<ng-container *ngTemplateOutlet="PictorialSliceShape"></ng-container>
+</ng-container>
+<ng-container *ngIf="selectedChart === 'Pictorial Chart'">
+<ng-container *ngTemplateOutlet="PictorialChart"></ng-container>
+</ng-container>
+<ng-container *ngIf="selectedChart === 'Animated Gauge Blue'">
+<ng-container *ngTemplateOutlet="AnimatedGaugeBlue"></ng-container>
+</ng-container>
+<ng-template #AnimatedGauge>
+<app-animated-gauge [value]="50" [name]="'chart'"></app-animated-gauge>
+</ng-template>
+<ng-template #PictorialChart>
+<app-pictorial-chart [value]="50" [name]="'chart'"></app-pictorial-chart>
+</ng-template>
+<ng-template #AnimatedGaugeBlue>
+<app-animated-gauge-blue
+  [value]="50"
+  [name]="'chart'"
+></app-animated-gauge-blue>
+</ng-template>
+</div>

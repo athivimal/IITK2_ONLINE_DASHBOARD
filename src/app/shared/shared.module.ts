@@ -9,10 +9,12 @@ import { AnimatedGaugeComponent } from './components/animated-gauge/animated-gau
 import { PictorialChartComponent } from './components/pictorial-chart/pictorial-chart.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { GraphDashboardComponent } from './container/graph-dashboard/graph-dashboard.component';
+import { AngularGaugeComponent } from './components/angular-gauge/angular-gauge.component';
+import { BatteryGaugeComponent } from './components/battery-gauge/battery-gauge.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, UserCardComponent, AnimatedGaugeComponent, PictorialChartComponent, SideNavComponent, GraphDashboardComponent],
+  declarations: [HeaderComponent, UserCardComponent, AnimatedGaugeComponent, PictorialChartComponent, SideNavComponent, GraphDashboardComponent, AngularGaugeComponent, BatteryGaugeComponent],
   imports: [
     CommonModule, RouterModule
   ],
