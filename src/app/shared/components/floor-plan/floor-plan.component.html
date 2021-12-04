@@ -1,0 +1,11 @@
+<div class="floor-plan-container">
+    <div class="floor-plan">
+        <div class="overlay-container">
+            <img src="/assets/images/{{img}}.png">
+        </div>
+        <ng-container *ngFor="let room of floorValues; index as i">
+            <div class="floor-value-container {{img}}-position{{i+1}}">{{room?.value}}</div>
+        </ng-container>
+        
+    </div>
+</div>

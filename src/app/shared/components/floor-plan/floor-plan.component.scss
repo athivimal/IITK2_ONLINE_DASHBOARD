@@ -1,0 +1,44 @@
+.floor-plan-container {
+    .overlay-container {
+        opacity: 0.4;
+    }
+    .floor-value-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: 1px solid #333;
+        position: absolute;
+        top: 130px;
+        bottom: 0;
+        left: 105px;
+        right: 0;
+        width: 65px;
+        height: 40px;
+        background-color: darkmagenta;
+        color: #fff;
+    }
+    .floor-plan {
+        position: relative;
+    }
+    .floor1-position2 {
+        left: 220px;
+    }
+    .floor1-position3 {
+        top: 340px;
+    }
+    .floor1-position4 {
+        top: 340px;
+        left: 220px;
+    }
+    .floor2-position2 {
+        left: 350px;
+    }
+    .floor2-position3 {
+        top: 225px;
+    }
+    .floor2-position4 {
+        top: 225px;
+        left: 350px;
+    }
+    
+}

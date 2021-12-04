@@ -14,6 +14,26 @@
   <ng-container *ngTemplateOutlet="BatteryGauge"></ng-container>
   </ng-container>
 
+  <ng-container *ngIf="identifier === 'floor-data1'">
+    <ng-container *ngTemplateOutlet="Floor1"></ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="identifier === 'floor-data2'">
+    <ng-container *ngTemplateOutlet="Floor2"></ng-container>
+  </ng-container>
+
+  <ng-template #Floor1>
+    <div class="row">
+      <app-floor-plan [floorValues]="mqPackets" [img]="'floor1'"></app-floor-plan>
+    </div>
+  </ng-template>
+
+  <ng-template #Floor2>
+    <div class="row">
+      <app-floor-plan [floorValues]="mqPackets" [img]="'floor2'"></app-floor-plan>
+    </div>
+  </ng-template>
+
 <ng-template #AnimatedGauge>
   <div class="row">
   <div class="col-12 col-md-6 col-lg-4" *ngFor="let tx of mqPackets; let i = index"> 

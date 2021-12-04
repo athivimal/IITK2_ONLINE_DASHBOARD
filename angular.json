@@ -26,7 +26,12 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.json",
-              "src/_redirects"
+              "src/_redirects",
+              {
+                "glob": "**/*",
+                "input": "src/assets/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
               "src/styles.scss"
@@ -101,7 +106,12 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.json"
+              "src/manifest.json",
+              {
+                "glob": "**/*",
+                "input": "src/assets/",
+                "output": "/assets/"
+              }
             ]
           }
         },
