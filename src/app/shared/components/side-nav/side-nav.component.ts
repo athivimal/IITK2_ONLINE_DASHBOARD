@@ -13,11 +13,11 @@ export class SideNavComponent implements OnInit {
   floors=[
     {
       "type" : "Floor 1",
-      "identifier" : "kt-data"
+      "identifier" : "floor-data1"
     },
     {
       "type" : "Floor 2",
-      "identifier" : "kt-data"
+      "identifier" : "floor-data2"
     }
   ]
   list=[
@@ -44,9 +44,10 @@ export class SideNavComponent implements OnInit {
   members=[];
   
   ngOnInit() {
-    const currentUser = this.authenticationService.currentUserValue;
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if(currentUser){
       if(currentUser?.plan === "floor"){
+        console.log("yes")
         this.selectedDevice.emit(this.floors[0]);
         this.selectedIdentifier = this.floors[0].type;
         this.members=[...this.members,...this.floors.slice(0,10)]
@@ -70,7 +71,6 @@ export class SideNavComponent implements OnInit {
     }
   }
   onNavClick(device){
-    console.log(device)
     this.selectedIdentifier = device.type;
     this.selectedDevice.emit(device);
   }

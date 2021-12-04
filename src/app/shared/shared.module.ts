@@ -11,10 +11,11 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { GraphDashboardComponent } from './container/graph-dashboard/graph-dashboard.component';
 import { AngularGaugeComponent } from './components/angular-gauge/angular-gauge.component';
 import { BatteryGaugeComponent } from './components/battery-gauge/battery-gauge.component';
+import { FloorPlanComponent } from './components/floor-plan/floor-plan.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, UserCardComponent, AnimatedGaugeComponent, PictorialChartComponent, SideNavComponent, GraphDashboardComponent, AngularGaugeComponent, BatteryGaugeComponent],
+  declarations: [HeaderComponent, UserCardComponent, AnimatedGaugeComponent, PictorialChartComponent, SideNavComponent, GraphDashboardComponent, AngularGaugeComponent, BatteryGaugeComponent, FloorPlanComponent],
   imports: [
     CommonModule, RouterModule
   ],
