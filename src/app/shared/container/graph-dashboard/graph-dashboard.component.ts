@@ -14,7 +14,7 @@ export class GraphDashboardComponent implements OnInit {
   incoming;
   duplicate = false;
   // mqPackets = new Array();
-  mqPackets = [{node: '2', value: 15, pin:2, count:3}];
+  mqPackets = [{node: '2', value: 15, pin:2, count:3},{node: '3', value: 20, pin:5, count:3},{node: '4', value: 60, pin:7, count:3}];
   
   i = 0;
   espmeterCharts=[];

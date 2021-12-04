@@ -13,7 +13,8 @@ export class Users {
             role: "Admin",
             device: "Ammeter",
             chart: ['Animated gauge', 'Pictorial chart'],
-            input: "3A"
+            input: "3A",
+            plan: "graph"
         },
         {
             id: "2",
@@ -26,7 +27,25 @@ export class Users {
             role: "User",
             device: "Voltmeter",
             chart: ['Animated gauge', 'Pictorial chart'],
-            input: "5V"
+            input: "5V",
+            plan: "graph"
+        },
+        {
+            id: "3",
+            username: "user",
+            name: "AmritanshSingh",
+            password: "user",
+            company: "Krish Tec",
+            contact: "1234567890",
+            email: "abc@gmail.com",
+            role: "User",
+            device: "",
+            chart: [],
+            input: "",
+            plan: "floor",
+            floor_plan: {
+                totalFloors: 2
+            }
         }
     ]
 }
