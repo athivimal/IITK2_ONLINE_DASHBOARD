@@ -85,6 +85,7 @@ export class UserDevicesComponent implements OnInit {
   ngOnInit() {}
 
   routeTabs(device){
+    console.log(device,"heyyyy");
     this.utilityService.selectedIdentifier.next(device.identifier);
     this.identifier = device.type;
   }

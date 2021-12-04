@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthenticationService } from 'src/app/auth-services/authentication.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -8,7 +9,17 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class SideNavComponent implements OnInit {
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private authenticationService: AuthenticationService) { }
+  floors=[
+    {
+      "type" : "Floor 1",
+      "identifier" : "floor-data1"
+    },
+    {
+      "type" : "Floor 2",
+      "identifier" : "floor-data2"
+    }
+  ]
   list=[
     {
       "type" : "Vehicle Speed",
@@ -17,6 +28,14 @@ export class SideNavComponent implements OnInit {
     {
       "type" : "Engine RPM",
       "identifier" : "kt-datarpm"
+    },
+    {
+      "type" : "Angular Gauge",
+      "identifier" : "new-item"
+    },
+    {
+      "type" : "Battery Gauge",
+      "identifier" : "batt"
     }
   ]
   
@@ -25,9 +44,20 @@ export class SideNavComponent implements OnInit {
   members=[];
   
   ngOnInit() {
-    this.selectedDevice.emit(this.list[0]);
-    this.selectedIdentifier = this.list[0].type;
-    this.members=[...this.members,...this.list.slice(0,10)]
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if(currentUser){
+      if(currentUser?.plan === "floor"){
+        console.log("yes")
+        this.selectedDevice.emit(this.floors[0]);
+        this.selectedIdentifier = this.floors[0].type;
+        this.members=[...this.members,...this.floors.slice(0,10)]
+      }
+      else{
+        this.selectedDevice.emit(this.list[0]);
+        this.selectedIdentifier = this.list[0].type;
+        this.members=[...this.members,...this.list.slice(0,10)]
+      }
+    }   
   }
   
   onScroll(event){
@@ -41,7 +71,6 @@ export class SideNavComponent implements OnInit {
     }
   }
   onNavClick(device){
-    console.log(device)
     this.selectedIdentifier = device.type;
     this.selectedDevice.emit(device);
   }
