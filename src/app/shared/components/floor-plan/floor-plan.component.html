@@ -4,7 +4,7 @@
             <img src="/assets/images/{{img}}.png">
         </div>
         <ng-container *ngFor="let room of floorValues; index as i">
-            <div class="floor-value-container {{img}}-position{{i+1}}">{{room?.value}}</div>
+            <div class="floor-value-container {{img}}-position{{i+1}}" [style.background-color]="getColor(room?.value)">{{room?.value}}</div>
         </ng-container>
         
     </div>
