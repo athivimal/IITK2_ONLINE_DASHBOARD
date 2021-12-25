@@ -13,8 +13,8 @@ export class GraphDashboardComponent implements OnInit {
   public message: string;
   incoming;
   duplicate = false;
-  // mqPackets = new Array();
-  mqPackets = [{node: '2', value: 2, pin:2, count:3},{node: '3', value: 40, pin:5, count:3},{node: '4', value: 20, pin:7, count:3},{node: '8', value: 88, pin:8, count:3}];
+  mqPackets = new Array();
+  // mqPackets = [{node: '2', value: 18, pin:2, count:3},{node: '3', value: 40, pin:5, count:3},{node: '4', value: 20, pin:7, count:3},{node: '8', value: 88, pin:8, count:3}];
   
   i = 0;
   espmeterCharts=[];
@@ -59,11 +59,11 @@ export class GraphDashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    setInterval(() => {
-      for (this.i = 0; this.i < this.mqPackets.length; this.i++) {
-        this.mqPackets[this.i].value = Math.floor(Math.random() * (45 - 10)) + 10;
-      }
-    }, 2500)
+    // setInterval(() => {
+    //   for (this.i = 0; this.i < this.mqPackets.length; this.i++) {
+    //     this.mqPackets[this.i].value = Math.floor(Math.random() * (45 - 10)) + 10;
+    //   }
+    // }, 2500)
     this.utilityService.selectedIdentifier.subscribe(identity => {
       console.log(identity, "identifier")
       this.identifier = identity;

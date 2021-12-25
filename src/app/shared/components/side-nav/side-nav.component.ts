@@ -13,11 +13,11 @@ export class SideNavComponent implements OnInit {
   floors=[
     {
       "type" : "Floor 1",
-      "identifier" : "floor-data1"
+      "identifier" : "kt-floor1-data1"
     },
     {
       "type" : "Floor 2",
-      "identifier" : "floor-data2"
+      "identifier" : "kt-floor2-data2"
     }
   ]
   list=[
