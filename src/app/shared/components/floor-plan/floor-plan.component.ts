@@ -17,23 +17,29 @@ export class FloorPlanComponent implements OnInit {
   }
 
   getColor(value) {
-    if(Math.floor(value) > 26) {
-      return '#ff004f';
+    if(Math.floor(value) > 30) {
+      return '#ff0000';
     }
     else if(Math.floor(value) >= 19 && Math.floor(value) < 21) {
-      return '#0083fd';
+      return '#00008f';
     }
     else if(Math.floor(value) >= 21 && Math.floor(value) < 23) {
-      return '#00840A';
+      return '#0000bb';
     }
     else if(Math.floor(value) >= 23 && Math.floor(value) < 25) {
-      return '#ffff34';
+      return '#0000ea';
     }
-    else if(Math.floor(value) >= 25 && Math.floor(value) <= 26) {
-      return '#ffa500';
+    else if(Math.floor(value) >= 25 && Math.floor(value) < 26) {
+      return '#00ffff';
+    }
+    else if(Math.floor(value) >= 26 && Math.floor(value) < 28) {
+      return '#007800';
+    }
+    else if(Math.floor(value) >= 28 && Math.floor(value) <= 30) {
+      return '#fa7800';
     }
     else {
-      return '#ffc0cb';
+      return '#00ff00';
     }
   }
 
