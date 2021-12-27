@@ -8,27 +8,31 @@
         justify-content: center;
         outline: 1px solid #333;
         position: absolute;
-        top: 130px;
+        top: 95px;
         bottom: 0;
         left: 105px;
         right: 0;
         width: 65px;
         height: 40px;
-        // background-color: darkmagenta;
-        color: #333;
+        color: #000000;
+        font-weight: bold;
     }
     .floor-plan {
         position: relative;
     }
     .floor1-position2 {
+        border-radius: 50%;
+        top: 190px;
+    }
+    .floor1-position3 {
         left: 220px;
         height: 140px;
         top: 100px;
     }
-    .floor1-position3 {
+    .floor1-position4 {
         top: 340px;
     }
-    .floor1-position4 {
+    .floor1-position5 {
         top: 315px;
         height: 140px;
         left: 220px;
