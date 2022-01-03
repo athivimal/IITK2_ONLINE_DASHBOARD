@@ -1,6 +1,15 @@
 .floor-plan-container {
+    .floor-value-array {
+        width: inherit;
+        height: 100%;
+        word-wrap: break-word;
+        
+    }
     .overlay-container {
         opacity: 0.4;
+        img {
+            width: 800px;
+        }
     }
     .floor-value-container {
         display: flex;
@@ -8,12 +17,12 @@
         justify-content: center;
         outline: 1px solid #333;
         position: absolute;
-        top: 95px;
+        top: 170px;
         bottom: 0;
-        left: 105px;
+        left: 210px;
         right: 0;
-        width: 65px;
-        height: 40px;
+        width: 150px;
+        height: 300px;
         color: #000000;
         font-weight: bold;
     }
@@ -49,3 +58,19 @@
     }
     
 }
+
+//   .floor-value-container {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     outline: 1px solid #333;
+//     position: absolute;
+//     top: 95px;
+//     bottom: 0;
+//     left: 105px;
+//     right: 0;
+//     width: 65px;
+//     height: 40px;
+//     color: #000000;
+//     font-weight: bold;
+// }

@@ -3,9 +3,16 @@
         <div class="overlay-container">
             <img src="/assets/images/{{img}}.png">
         </div>
-        <ng-container *ngFor="let room of floorValues; index as i">
-            <div class="floor-value-container {{img}}-position{{i+1}}" [style.background-color]="getColor(room?.value)">{{room?.value}}</div>
-        </ng-container>
-        
+        <div class="floor-value-container">
+            <div class="floor-value-array">
+                <span  *ngFor="let room of floorValues; index as i;"><span [style.color]="getColor(room)" *ngIf="i>0; else firstIndex;">, {{room}}</span><ng-template #firstIndex><span [style.color]="getColor(room)">{{room}} </span></ng-template></span>
+             </div> 
+        </div>
     </div>
+    <!--
+    <ng-container *ngFor="let room of floorValues; index as i">
+        <div class="floor-value-container {{img}}-position{{i+1}}" [style.background-color]="getColor(room?.value)">{{room?.value}}</div>
+    </ng-container> 
+    -->
+    
 </div>
