@@ -13,7 +13,7 @@ export class GraphDashboardComponent implements OnInit {
   public message: string;
   incoming;
   duplicate = false;
-  data = [1,2,3,4,5,6,7,8,9,0,11,12,121,12,1223,24,3434,3,435,5,5,66,76,87,7,6,64,5,35,35,4,54,654];
+  // data = [1,2,3,4,5,6,7,8,9,0,11,12,121,12,1223,24,3434,3,435,5,5,66,76,87,7,6,64,5,35,35,4,54,654];
   mqPackets = new Array();
   // mqPackets = [{node: '2', value: 18, pin:2, count:3},{node: '3', value: 40, pin:5, count:3},{node: '4', value: 20, pin:7, count:3},{node: '8', value: 88, pin:8, count:3}];
   
