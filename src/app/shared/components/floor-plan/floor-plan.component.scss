@@ -1,14 +1,13 @@
 .floor-plan-container {
     .floor-value-array {
         width: inherit;
-        height: 100%;
         word-wrap: break-word;
         
     }
     .overlay-container {
         opacity: 0.4;
         img {
-            width: 800px;
+            width: 1000px;
         }
     }
     .floor-value-container {
@@ -16,13 +15,14 @@
         align-items: center;
         justify-content: center;
         outline: 1px solid #333;
+        padding: 5px;
         position: absolute;
-        top: 170px;
+        top: 230px;
         bottom: 0;
-        left: 210px;
+        left: 245px;
         right: 0;
-        width: 150px;
-        height: 300px;
+        width: 220px;
+        height: 370px;
         color: #000000;
         font-weight: bold;
     }
